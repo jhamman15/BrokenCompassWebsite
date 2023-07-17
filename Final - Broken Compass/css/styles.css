@@ -290,9 +290,10 @@ ul {
     /* background-color: #b68f00; */
     margin: 10px;
     text-align: center;
-    display: block;
+    display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-direction: column;
 }
 
 #zip_code {
@@ -355,6 +356,7 @@ ul {
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
+    -webkit-user-select: none;
     user-select: none;
   }
 
