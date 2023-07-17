@@ -97,7 +97,7 @@ function getWeather(){
 
   if(validZipTest.test(zipCode)){
 
-    console.log("1");
+    // console.log("1");
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&APPID=0fac7a457adf5c6c2e82f4dc021ae9d0&units=imperial`)
       .then(response => {
@@ -107,9 +107,10 @@ function getWeather(){
       .then(function (obj) {
         // console.log(obj.main.temp)
 
-        weatherInfo.innerHTML = `Current Temperature: ${JSON.stringify(obj.main.temp)}&#176F<br>`;
-        weatherInfo.innerHTML += `High: ${JSON.stringify(obj.main.temp_max)}&#176F<br>`
-        weatherInfo.innerHTML += `Low: ${JSON.stringify(obj.main.temp_min)}&#176F`
+        weatherInfo.innerHTML =  `Today's Weather in ${obj.name} - <br>` 
+        weatherInfo.innerHTML += `Current Temperature: ${JSON.stringify(obj.main.temp)}&#176F<br>`
+        weatherInfo.innerHTML += `Current Humidity: ${JSON.stringify(obj.main.humidity)}%<br>`
+        // weatherInfo.innerHTML += `${JSON.stringify(obj.description)}`
 
       })
 
